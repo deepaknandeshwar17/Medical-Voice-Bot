@@ -1,0 +1,109 @@
+[
+  {
+    "intent_id": "greeting",
+    "example_phrases": [
+      "hello",
+      "hi there",
+      "good morning",
+      "hey",
+      "namaste",
+      "good afternoon"
+    ],
+    "replies": {
+      "en": "Hello! Welcome to Aarogya Clinic. How can I help you today?",
+      "hi": "नमस्ते! आरोग्य क्लिनिक में आपका स्वागत है। मैं आपकी कैसे मदद कर सकता हूँ?",
+      "kn": "ನಮಸ್ಕಾರ! ಆರೋಗ್ಯ ಕ್ಲಿನಿಕ್‌ಗೆ ಸ್ವಾಗತ. ನಾನು ನಿಮಗೆ ಹೇಗೆ ಸಹಾಯ ಮಾಡಬಹುದು?"
+    }
+  },
+  {
+    "intent_id": "goodbye",
+    "example_phrases": [
+      "goodbye",
+      "bye",
+      "see you later",
+      "that's all, thanks",
+      "ok bye"
+    ],
+    "replies": {
+      "en": "Thank you for calling Aarogya Clinic. Have a great day!",
+      "hi": "आरोग्य क्लिनिक को कॉल करने के लिए धन्यवाद। आपका दिन शुभ हो!",
+      "kn": "ಆರೋಗ್ಯ ಕ್ಲಿನಿಕ್‌ಗೆ ಕರೆ ಮಾಡಿದ್ದಕ್ಕೆ ಧನ್ಯವಾದಗಳು. ನಿಮ್ಮ ದಿನ ಶುಭವಾಗಲಿ!"
+    }
+  },
+  {
+    "intent_id": "clinic_hours",
+    "example_phrases": [
+      "what are your clinic hours",
+      "when are you open",
+      "what time do you open",
+      "what time do you close",
+      "are you open today",
+      "clinic timings"
+    ],
+    "replies": {
+      "en": "Aarogya Clinic is open Monday to Saturday, 9 AM to 7 PM. We are closed on Sundays.",
+      "hi": "आरोग्य क्लिनिक सोमवार से शनिवार, सुबह 9 बजे से शाम 7 बजे तक खुला रहता है। रविवार को बंद रहता है।",
+      "kn": "ಆರೋಗ್ಯ ಕ್ಲಿನಿಕ್ ಸೋಮವಾರದಿಂದ ಶನಿವಾರದವರೆಗೆ ಬೆಳಿಗ್ಗೆ 9 ರಿಂದ ಸಂಜೆ 7 ರವರೆಗೆ ತೆರೆದಿರುತ್ತದೆ. ಭಾನುವಾರ ಮುಚ್ಚಿರುತ್ತದೆ."
+    }
+  },
+  {
+    "intent_id": "clinic_address",
+    "example_phrases": [
+      "where is the clinic located",
+      "what is your address",
+      "how do I get there",
+      "where are you located",
+      "clinic address please"
+    ],
+    "replies": {
+      "en": "We are located at 12 MG Road, Indiranagar, Bengaluru, Karnataka 560038.",
+      "hi": "हम 12 एमजी रोड, इंदिरानगर, बेंगलुरु, कर्नाटक 560038 पर स्थित हैं।",
+      "kn": "ನಾವು 12 ಎಂಜಿ ರಸ್ತೆ, ಇಂದಿರಾನಗರ, ಬೆಂಗಳೂರು, ಕರ್ನಾಟಕ 560038 ರಲ್ಲಿ ಇದ್ದೇವೆ."
+    }
+  },
+  {
+    "intent_id": "services_offered",
+    "example_phrases": [
+      "what services do you offer",
+      "what treatments are available",
+      "do you do blood tests",
+      "what specialties do you have",
+      "what can I get treated for here"
+    ],
+    "replies": {
+      "en": "We offer general consultations, pediatrics, orthopedics, gynecology, dermatology, blood tests, and vaccinations.",
+      "hi": "हम सामान्य परामर्श, बाल रोग, हड्डी रोग, स्त्री रोग, त्वचा रोग, रक्त जांच और टीकाकरण की सुविधा देते हैं।",
+      "kn": "ನಾವು ಸಾಮಾನ್ಯ ಸಮಾಲೋಚನೆ, ಮಕ್ಕಳ ಆರೋಗ್ಯ, ಮೂಳೆ ಚಿಕಿತ್ಸೆ, ಸ್ತ್ರೀರೋಗ, ಚರ್ಮ ಚಿಕಿತ್ಸೆ, ರಕ್ತ ಪರೀಕ್ಷೆ ಮತ್ತು ಲಸಿಕೆ ಸೇವೆಗಳನ್ನು ನೀಡುತ್ತೇವೆ."
+    }
+  },
+  {
+    "intent_id": "human_handoff_request",
+    "example_phrases": [
+      "I want to talk to a person",
+      "connect me to the front desk",
+      "can I speak to a human",
+      "transfer me to a staff member",
+      "I need a real person"
+    ],
+    "replies": {
+      "en": "Sure, connecting you to the front desk now. Please hold.",
+      "hi": "ज़रूर, अभी आपको फ्रंट डेस्क से जोड़ रहे हैं। कृपया प्रतीक्षा करें।",
+      "kn": "ಖಂಡಿತ, ಈಗ ನಿಮ್ಮನ್ನು ಫ್ರಂಟ್ ಡೆಸ್ಕ್‌ಗೆ ಸಂಪರ್ಕಿಸಲಾಗುತ್ತಿದೆ. ದಯವಿಟ್ಟು ಕಾಯಿರಿ."
+    }
+  },
+  {
+    "intent_id": "thanks",
+    "example_phrases": [
+      "thank you",
+      "thanks a lot",
+      "thanks",
+      "appreciate it",
+      "great, thank you"
+    ],
+    "replies": {
+      "en": "You're welcome! Is there anything else I can help with?",
+      "hi": "आपका स्वागत है! क्या मैं आपकी और किसी चीज़ में मदद कर सकता हूँ?",
+      "kn": "ಸ್ವಾಗತ! ನಾನು ಇನ್ನೇನಾದರೂ ಸಹಾಯ ಮಾಡಬಹುದೇ?"
+    }
+  }
+]

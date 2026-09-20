@@ -5,3 +5,6 @@ pydantic-settings
 httpx
 anthropic
 python-dotenv
+sentence-transformers
+faiss-cpu
+numpy

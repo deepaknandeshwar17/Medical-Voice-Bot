@@ -1,0 +1,15 @@
+{
+  "clinic_name": "Aarogya Clinic",
+  "address": "12 MG Road, Indiranagar, Bengaluru, Karnataka 560038",
+  "phone": "080-4123-5566",
+  "weekday_hours": "9:00 AM - 7:00 PM (Monday to Saturday)",
+  "sunday_hours": "Closed",
+  "holidays": [
+    "Republic Day (Jan 26)",
+    "Independence Day (Aug 15)",
+    "Gandhi Jayanti (Oct 2)",
+    "Diwali (date varies)",
+    "Ugadi (date varies)"
+  ],
+  "lunch_break": "1:00 PM - 2:00 PM (front desk only; some doctors continue seeing patients by prior appointment)"
+}

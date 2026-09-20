@@ -1,0 +1,32 @@
+[
+  {
+    "name": "General Consultation",
+    "description": "Routine check-ups and consultations for common illnesses, fever, cold, cough, and general health concerns.",
+    "price_inr": 400
+  },
+  {
+    "name": "Pediatric Consultation",
+    "description": "Health check-ups, vaccinations, and growth monitoring for infants and children.",
+    "price_inr": 500
+  },
+  {
+    "name": "Orthopedic Consultation",
+    "description": "Diagnosis and treatment planning for joint pain, fractures, and musculoskeletal issues.",
+    "price_inr": 600
+  },
+  {
+    "name": "Blood Tests",
+    "description": "Routine blood work including CBC, blood sugar, lipid profile. Sample collected on-site, results in 24 hours.",
+    "price_inr": 300
+  },
+  {
+    "name": "Vaccination",
+    "description": "Adult and child vaccinations as per standard immunization schedules.",
+    "price_inr": 250
+  },
+  {
+    "name": "Minor Procedures",
+    "description": "Dressing, stitches, and minor wound care.",
+    "price_inr": 350
+  }
+]

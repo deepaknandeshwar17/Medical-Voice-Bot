@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Dr. Ravi Kulkarni",
+    "specialty": "General Medicine",
+    "available_days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "timing": "9:00 AM - 1:00 PM, 4:00 PM - 7:00 PM"
+  },
+  {
+    "name": "Dr. Ananya Rao",
+    "specialty": "Pediatrics",
+    "available_days": ["Monday", "Wednesday", "Friday", "Saturday"],
+    "timing": "10:00 AM - 2:00 PM"
+  },
+  {
+    "name": "Dr. Suresh Iyer",
+    "specialty": "Orthopedics",
+    "available_days": ["Tuesday", "Thursday", "Saturday"],
+    "timing": "11:00 AM - 3:00 PM"
+  },
+  {
+    "name": "Dr. Priya Shetty",
+    "specialty": "Gynecology",
+    "available_days": ["Monday", "Tuesday", "Thursday", "Friday"],
+    "timing": "9:00 AM - 12:00 PM, 3:00 PM - 6:00 PM"
+  },
+  {
+    "name": "Dr. Arjun Nair",
+    "specialty": "Dermatology",
+    "available_days": ["Wednesday", "Friday", "Saturday"],
+    "timing": "12:00 PM - 4:00 PM"
+  }
+]
