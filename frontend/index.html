@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Swasthya Voice — service check</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Service verification</h1>
+
+  <section>
+    <h2>1. Mic + Sarvam STT</h2>
+    <button id="recordBtn">Record 3s</button>
+    <audio id="playback" controls></audio>
+    <button id="sendBtn" disabled>Send to /debug/transcribe</button>
+    <pre id="transcriptOut"></pre>
+  </section>
+
+  <section>
+    <h2>2. Sarvam TTS</h2>
+    <input id="ttsText" value="Hello, this is a test." />
+    <button id="ttsBtn">Synthesize</button>
+    <audio id="ttsPlayback" controls></audio>
+  </section>
+
+  <section>
+    <h2>3. Claude Haiku</h2>
+    <input id="haikuPrompt" value="Say OK if you can hear me." />
+    <button id="haikuBtn">Send</button>
+    <pre id="haikuOut"></pre>
+  </section>
+
+  <section>
+    <h2>4. Claude Sonnet</h2>
+    <input id="sonnetPrompt" value="Say OK if you can hear me." />
+    <button id="sonnetBtn">Send</button>
+    <pre id="sonnetOut"></pre>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
