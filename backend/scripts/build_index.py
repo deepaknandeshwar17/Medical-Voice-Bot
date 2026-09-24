@@ -19,9 +19,25 @@ from app.config import settings  # noqa: E402
 KB_DIR = REPO_ROOT / "backend" / "data" / "clinic_kb"
 
 
-def chunk_json_array(path: Path) -> list[dict]:
+def chunk_json_array_with_summary(path: Path, summary_title: str, line_fn) -> list[dict]:
+    """Individual per-item chunks (good for "does Dr. X work Saturdays" / "how much is
+    Blood Tests") PLUS one consolidated chunk listing every item together (good for
+    "who are your doctors" / "what all services do you offer"), tagged is_summary=True.
+
+    Relying on the summary chunk to win top_k=3 purely on embedding similarity turned
+    out fragile: it worked for doctors (usually ranked #1-3) but failed for services —
+    "what all services do you offer" scores every individual service chunk highly too
+    (each one IS a service, so they all match the general topic), so the summary chunk
+    never cleared into the top 3 regardless of how it was worded. rag.py always includes
+    every is_summary chunk in context on top of normal top-k retrieval instead, so this
+    doesn't depend on winning a ranking contest at all."""
     items = json.loads(path.read_text(encoding="utf-8"))
-    return [{"text": json.dumps(item, ensure_ascii=False), "source": path.name} for item in items]
+    chunks = [{"text": json.dumps(item, ensure_ascii=False), "source": path.name} for item in items]
+
+    summary_text = summary_title + "\n" + "\n".join(line_fn(item) for item in items)
+    chunks.append({"text": summary_text, "source": path.name, "is_summary": True})
+
+    return chunks
 
 
 def chunk_json_object(path: Path) -> list[dict]:
@@ -43,8 +59,16 @@ def chunk_markdown_by_heading(path: Path) -> list[dict]:
 
 def build_chunks() -> list[dict]:
     chunks = []
-    chunks += chunk_json_array(KB_DIR / "doctors.json")
-    chunks += chunk_json_array(KB_DIR / "services.json")
+    chunks += chunk_json_array_with_summary(
+        KB_DIR / "doctors.json",
+        "All doctors at Aarogya Clinic:",
+        lambda d: f"{d['name']} — {d['specialty']}, available {', '.join(d['available_days'])}, {d['timing']}",
+    )
+    chunks += chunk_json_array_with_summary(
+        KB_DIR / "services.json",
+        "All services at Aarogya Clinic:",
+        lambda s: f"{s['name']} — {s['description']} ({s['price_inr']} rupees)",
+    )
     chunks += chunk_json_object(KB_DIR / "timings.json")
     chunks += chunk_markdown_by_heading(KB_DIR / "faq.md")
     chunks += chunk_markdown_by_heading(KB_DIR / "appointment_policy.md")

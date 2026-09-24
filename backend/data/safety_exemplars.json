@@ -1,0 +1,66 @@
+[
+  {
+    "category_id": "medical_emergency",
+    "example_phrases": [
+      "chest pain",
+      "I can't breathe",
+      "he is bleeding heavily",
+      "she fainted and won't wake up",
+      "difficulty breathing",
+      "severe chest pain radiating to my arm",
+      "someone is having a heart attack",
+      "he collapsed suddenly",
+      "there is heavy bleeding that won't stop",
+      "I think I am having a stroke",
+      "his lips are turning blue",
+      "she is gasping for air"
+    ],
+    "keywords": [
+      "chest pain",
+      "can't breathe",
+      "cannot breathe",
+      "not breathing",
+      "unconscious",
+      "unresponsive",
+      "heart attack",
+      "stroke",
+      "severe bleeding",
+      "heavily bleeding",
+      "choking",
+      "seizure"
+    ],
+    "replies": {
+      "en": "This sounds like a medical emergency. Please hang up and call 108 immediately, or go to the nearest hospital emergency room. I'm connecting you to a human at the front desk now.",
+      "hi": "यह एक मेडिकल इमरजेंसी लग रही है। कृपया तुरंत 108 पर कॉल करें या नज़दीकी अस्पताल की इमरजेंसी में जाएं। मैं अभी आपको फ्रंट डेस्क से जोड़ रहा हूँ।",
+      "kn": "ಇದು ವೈದ್ಯಕೀಯ ತುರ್ತು ಪರಿಸ್ಥಿತಿಯಂತೆ ತೋರುತ್ತದೆ. ದಯವಿಟ್ಟು ತಕ್ಷಣ 108 ಗೆ ಕರೆ ಮಾಡಿ ಅಥವಾ ಹತ್ತಿರದ ಆಸ್ಪತ್ರೆಯ ತುರ್ತು ವಿಭಾಗಕ್ಕೆ ಹೋಗಿ. ನಾನು ಈಗ ನಿಮ್ಮನ್ನು ಫ್ರಂಟ್ ಡೆಸ್ಕ್‌ಗೆ ಸಂಪರ್ಕಿಸುತ್ತಿದ್ದೇನೆ."
+    }
+  },
+  {
+    "category_id": "mental_health_crisis",
+    "example_phrases": [
+      "I want to kill myself",
+      "I don't want to live anymore",
+      "I am thinking about ending my life",
+      "I want to hurt myself",
+      "I feel like giving up on life",
+      "I have been having thoughts of self harm",
+      "life doesn't feel worth living",
+      "I keep thinking about ending it all"
+    ],
+    "keywords": [
+      "kill myself",
+      "suicide",
+      "suicidal",
+      "end my life",
+      "want to die",
+      "hurt myself",
+      "self harm",
+      "self-harm"
+    ],
+    "replies": {
+      "en": "I'm really sorry you're going through this. Please reach out to the KIRAN helpline at 1800-599-0019, available 24/7, or go to the nearest emergency room. I'm connecting you to a human now.",
+      "hi": "मुझे खेद है कि आप इस स्थिति से गुज़र रहे हैं। कृपया किरण हेल्पलाइन 1800-599-0019 पर संपर्क करें, जो 24/7 उपलब्ध है, या नज़दीकी अस्पताल जाएं। मैं अभी आपको एक व्यक्ति से जोड़ रहा हूँ।",
+      "kn": "ನೀವು ಈ ಪರಿಸ್ಥಿತಿಯಲ್ಲಿ ಇರುವುದಕ್ಕೆ ನನಗೆ ವಿಷಾದವಿದೆ. ದಯವಿಟ್ಟು 24/7 ಲಭ್ಯವಿರುವ ಕಿರಣ್ ಸಹಾಯವಾಣಿ 1800-599-0019 ಗೆ ಸಂಪರ್ಕಿಸಿ ಅಥವಾ ಹತ್ತಿರದ ಆಸ್ಪತ್ರೆಗೆ ಹೋಗಿ. ನಾನು ಈಗ ನಿಮ್ಮನ್ನು ಒಬ್ಬ ವ್ಯಕ್ತಿಗೆ ಸಂಪರ್ಕಿಸುತ್ತಿದ್ದೇನೆ."
+    }
+  }
+]

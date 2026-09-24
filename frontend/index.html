@@ -2,40 +2,106 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<title>Swasthya Voice — service check</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Swasthya Voice — AI Receptionist</title>
 <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Service verification</h1>
+  <div class="app">
 
-  <section>
-    <h2>1. Mic + Sarvam STT</h2>
-    <button id="recordBtn">Record 3s</button>
-    <audio id="playback" controls></audio>
-    <button id="sendBtn" disabled>Send to /debug/transcribe</button>
-    <pre id="transcriptOut"></pre>
-  </section>
+    <aside class="sidebar-left">
+      <div class="brand">
+        <div class="brand-icon">&#127807;</div>
+        <div class="brand-name">Aarogya Clinic</div>
+        <div class="brand-tagline">Care Today, Brighter Tomorrows</div>
+      </div>
 
-  <section>
-    <h2>2. Sarvam TTS</h2>
-    <input id="ttsText" value="Hello, this is a test." />
-    <button id="ttsBtn">Synthesize</button>
-    <audio id="ttsPlayback" controls></audio>
-  </section>
+      <nav class="nav">
+        <div class="nav-item active">Conversation</div>
+      </nav>
 
-  <section>
-    <h2>3. Claude Haiku</h2>
-    <input id="haikuPrompt" value="Say OK if you can hear me." />
-    <button id="haikuBtn">Send</button>
-    <pre id="haikuOut"></pre>
-  </section>
+      <div class="sidebar-footer">
+        <div class="sidebar-quote">Better Conversations.<br />Healthier Lives.</div>
+        <div class="sidebar-location">&#128205; Bengaluru, India</div>
+      </div>
+    </aside>
 
-  <section>
-    <h2>4. Claude Sonnet</h2>
-    <input id="sonnetPrompt" value="Say OK if you can hear me." />
-    <button id="sonnetBtn">Send</button>
-    <pre id="sonnetOut"></pre>
-  </section>
+    <main class="main">
+      <header class="main-header">
+        <div>
+          <h1>AI Receptionist</h1>
+          <p class="subtitle">Talk &bull; Get Answers &bull; Book Appointments</p>
+        </div>
+        <select id="languageSelect" class="language-select">
+          <option value="en">English</option>
+          <option value="hi">Hindi</option>
+          <option value="kn">Kannada</option>
+        </select>
+      </header>
+
+      <div id="conversationLog" class="conversation-log"></div>
+
+      <div class="quick-actions">
+        <button class="chip" data-text="What are your clinic timings?">&#128337; Clinic timings</button>
+        <button class="chip" data-text="I want to book an appointment.">&#128197; Book appointment</button>
+        <button class="chip" data-text="Who are your doctors and what are their specialties?">&#128100; Our doctors</button>
+        <button class="chip" data-text="I want to cancel my appointment.">&#10060; Cancel appointment</button>
+      </div>
+
+      <div class="input-bar">
+        <input id="textInput" type="text" placeholder="Type a message…" autocomplete="off" />
+        <button id="sendTextBtn" class="send-btn">Send</button>
+        <div class="mic-wrap">
+          <button id="micBtn" class="mic-btn" title="Start hands-free conversation">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+              <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+              <line x1="12" y1="19" x2="12" y2="23"/>
+              <line x1="8" y1="23" x2="16" y2="23"/>
+            </svg>
+          </button>
+          <span id="micLabel" class="mic-label">Start</span>
+        </div>
+      </div>
+      <div id="micStatus" class="mic-status">Click the mic to start a hands-free conversation</div>
+    </main>
+
+    <aside class="sidebar-right">
+      <div class="card">
+        <div class="card-row">
+          <span class="status-dot"></span>
+          <div>
+            <div class="card-title-inline">Connected</div>
+            <div class="card-sub">Aarogya Clinic Assistant</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title-row">
+          <span class="card-title">Current Session</span>
+          <button id="newSessionBtn" class="pill-btn">New</button>
+        </div>
+        <div class="card-label">Conversation ID</div>
+        <div id="conversationIdDisplay" class="mono-id">—</div>
+        <div class="card-meta"><span id="turnCount">0</span> turns &bull; <span id="sessionDuration">0 min</span></div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Turn Details</div>
+        <div class="detail-row"><span>Language (reply)</span><span id="detailLanguage">—</span></div>
+        <div class="detail-row"><span>Response Tier</span><span id="detailTier" class="tier-pill">—</span></div>
+        <div class="detail-row"><span>Latency</span><span id="detailLatency">—</span></div>
+        <div class="detail-row"><span>Transfer to Human</span><span id="detailTransfer">—</span></div>
+      </div>
+
+      <div class="card emergency-card">
+        <div class="emergency-title">&#9888;&#65039; Medical Emergency?</div>
+        <div class="emergency-text">If you are experiencing a medical emergency, please call 108 or visit the nearest hospital.</div>
+      </div>
+    </aside>
+
+  </div>
 
   <script src="script.js"></script>
 </body>

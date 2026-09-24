@@ -76,24 +76,44 @@ def cancel_appointment(
     appointment_id: int | None = None,
     patient_phone: str | None = None,
     date: str | None = None,
+    doctor_name: str | None = None,
 ) -> dict:
     conn = _connect()
     try:
         if appointment_id is not None:
-            row = conn.execute(
+            rows = conn.execute(
                 "SELECT * FROM appointments WHERE id = ? AND status != 'cancelled'", (appointment_id,)
-            ).fetchone()
+            ).fetchall()
         elif patient_phone and date:
-            row = conn.execute(
-                "SELECT * FROM appointments WHERE patient_phone = ? AND date = ? AND status != 'cancelled'",
-                (patient_phone, date),
-            ).fetchone()
+            query = """
+                SELECT appointments.*, doctors.name AS doctor_name FROM appointments
+                JOIN doctors ON doctors.id = appointments.doctor_id
+                WHERE appointments.patient_phone = ? AND appointments.date = ? AND appointments.status != 'cancelled'
+            """
+            params: list = [patient_phone, date]
+            if doctor_name:
+                query += " AND doctors.name LIKE ?"
+                params.append(f"%{doctor_name}%")
+            rows = conn.execute(query, params).fetchall()
         else:
             return {"error": "missing_lookup", "message": "Provide appointment_id, or patient_phone and date."}
 
-        if row is None:
+        if not rows:
             return {"error": "not_found", "message": "No matching active appointment found."}
 
+        if len(rows) > 1:
+            # Multiple active appointments match phone+date — cancelling one arbitrarily
+            # would risk cancelling the wrong one. Surface the options instead of guessing.
+            candidates = [
+                {"appointment_id": r["id"], "doctor_name": r["doctor_name"], "time": r["time"]} for r in rows
+            ]
+            return {
+                "error": "ambiguous",
+                "message": "More than one active appointment matches. Ask which one, then retry with appointment_id or doctor_name.",
+                "candidates": candidates,
+            }
+
+        row = rows[0]
         conn.execute("UPDATE appointments SET status = 'cancelled' WHERE id = ?", (row["id"],))
         conn.execute(
             "UPDATE slots SET is_booked = 0 WHERE doctor_id = ? AND date = ? AND time = ?",

@@ -7,7 +7,12 @@
       "good morning",
       "hey",
       "namaste",
-      "good afternoon"
+      "good afternoon",
+      "hiya",
+      "hey there",
+      "yo",
+      "hello there",
+      "good evening"
     ],
     "replies": {
       "en": "Hello! Welcome to Aarogya Clinic. How can I help you today?",
@@ -51,9 +56,11 @@
     "example_phrases": [
       "where is the clinic located",
       "what is your address",
-      "how do I get there",
+      "what is your full address",
       "where are you located",
-      "clinic address please"
+      "clinic address please",
+      "give me directions to the clinic",
+      "which area is the clinic in"
     ],
     "replies": {
       "en": "We are located at 12 MG Road, Indiranagar, Bengaluru, Karnataka 560038.",

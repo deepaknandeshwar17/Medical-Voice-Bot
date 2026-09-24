@@ -25,7 +25,7 @@
 | Speech-to-Text | Sarvam AI Saaras v3, **`translate` mode** (all input → English text) | Normalizes every language to English internally; avoids needing multilingual embeddings or a translation round-trip |
 | Text-to-Speech | Sarvam AI Bulbul v3 | Native support for the target output languages (English, Hindi, Kannada) |
 | LLM — RAG/Q&A tier | Claude Haiku 4.5 (`claude-haiku-4-5-20251001`) via Anthropic API | Fast, cheap, adequate for grounded Q&A where a wrong answer isn't costly |
-| LLM — Tool-calling/agent tier | Claude Sonnet (current Sonnet model at build time) via Anthropic API | Stronger, more reliable tool-calling; used only where an action (booking, cancelling) is actually taken |
+| LLM — Tool-calling/agent tier | ~~Claude Sonnet~~ **Claude Haiku 4.5** via Anthropic API | Originally spec'd as Sonnet for tool-call reliability. Tested both head-to-head on the actual tool set (6 simple, well-defined tools, no deep multi-hop reasoning) — Haiku matched Sonnet on every case including multi-tool sequencing (check-then-book) and correct cancel-by-ID. Switched for lower per-token cost since Sonnet's extra reliability wasn't needed for this tool complexity. |
 | Embeddings | Local, self-hosted: `BAAI/bge-small-en-v1.5` (via `sentence-transformers`) | English-only is sufficient because STT normalizes to English before retrieval; local avoids network round-trip latency |
 | Vector store | FAISS (flat/brute-force index) | Corpus is tiny (~30–50 chunks); no need for approximate search |
 | Database | SQLite (via `sqlite3` or SQLAlchemy) | Mock doctors, time slots, appointments, refill requests — zero setup overhead |
